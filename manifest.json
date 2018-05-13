@@ -1,0 +1,35 @@
+{
+  "name": "Panstarrs",
+  "version": "1.1.0",
+  "manifest_version": 2,
+  "icons": {
+    "128": "images/icon.png"
+  },
+  "description": "The comet",
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "identity",
+    "notifications"
+  ],
+  "externally_connectable": {
+    "matches": ["https://www.nnn.ed.nico/courses/*", "https://www.nnn.ed.nico/contents/*", "https://ww3.tokyo-shoseki.co.jp/*"]
+  },
+  "background": {
+    "scripts": ["jquery-3.2.1.min.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.nnn.ed.nico/courses/*", "https://www.nnn.ed.nico/contents/*", "https://ww3.tokyo-shoseki.co.jp/*"],
+      "all_frames": true,
+      "js": ["jquery-3.2.1.min.js", "index.js", "main.js"],
+      "css": ["index.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": ["images/Panstarrs_loaded.svg", "images/panstarrs.svg", "images/icon.png", "Panstarrs.wav"]
+}

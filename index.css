@@ -1,0 +1,193 @@
+.panstarrs-intro{
+  position: fixed;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%) translateY(50%);
+  transform-origin: left bottom;
+  width: 420px;
+  height: 120px;
+  opacity: 0;
+  z-index: 500000;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  animation: intro ease-in-out 6s;
+}
+
+@keyframes intro{
+  0%{bottom: 100%; opacity: 0;}
+  30%{bottom: 50%; opacity: 1; transform: scale(1) translateX(-50%) translateY(50%);}
+  35%{bottom: 50%; opacity: 1; transform: scale(1.1) translateX(-50%) translateY(50%);}
+  40%{bottom: 50%; opacity: 1; transform: scale(1) translateX(-50%) translateY(50%);}
+  45%{bottom: 50%; opacity: 1; transform: scale(1.1) translateX(-50%) translateY(50%);}
+  50%{bottom: 50%; opacity: 1; transform: rotateZ(0deg) translateX(-50%) translateY(50%);}
+  60%{bottom: 50%; opacity: 1; transform: rotateZ(370deg) translateX(-50%) translateY(50%);}
+  63%{bottom: 50%; opacity: 1; transform: rotateZ(355deg) translateX(-50%) translateY(50%);}
+  65%{bottom: 50%; opacity: 1; transform: scale(1)rotateZ(360deg) translateX(-50%) translateY(50%);}
+  90%{bottom: 50%; opacity: 1; transform: scale(1.3) rotateZ(360deg) translateX(-50%) translateY(50%);}
+  100%{bottom: 50%; opacity: 1; transform: scale(0) rotateZ(360deg) translateX(-50%) translateY(50%);}
+}
+
+.panstarrs-load{
+  position: fixed;
+  height: 200px;
+  width: 200px;
+  top: 80%;
+}
+
+.panstarrs-menu{
+  position: fixed;
+  left: 100%;
+  top: 100%;
+  height: 75px;
+  width: 75px;
+  z-index: 500000;
+  cursor: pointer;
+  border-radius: 40px 40px 0 40px;
+  background-color: #212121;
+  transform: rotateZ(0deg) scale(1);
+  transition: ease-in-out 1s;
+  font-family: 'Material Icons';
+  line-height: 75px;
+  text-align: center;
+  font-size: 2.5em;
+  color: white;
+}
+
+.panstarrs-menu.active{
+  left: calc(100% - 65px);
+  top: calc(100% - 65px);
+  transform: rotateZ(-12deg) scale(1);
+}
+
+.panstarrs-menu.active:hover{
+  transform: rotateZ(-12deg) scale(1.2);
+  transition: 0.1s ease-in-out !important;
+}
+
+.panstarrs-menu.open{
+  transform: rotateZ(0deg) scale(1.2);
+  transition: 0.1s ease-in-out !important;
+}
+
+.panstarrs-menu-col{
+  position: fixed;
+  height: 50px;
+  line-height: 50px;
+  width: 160px;
+  right: -160px;
+  color: white;
+  z-index: 500000;
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+
+.panstarrs-menu-col.visible{
+  right: -10px;
+}
+
+.panstarrs-menu-col.visible:hover{
+  background-color: #363636;
+  right: 0;
+}
+
+.panstarrs-menu-col:nth-of-type(1){
+  bottom: 140px;
+  border-radius: 0 0 0 8px;
+}
+
+.panstarrs-menu-col:nth-of-type(2){
+  bottom: 190px;
+  border-radius: 0;
+}
+
+.panstarrs-menu-col:nth-of-type(3){
+  bottom: 240px;
+  border-radius: 8px 0 0 0;
+}
+
+.panstarrs-disabled{
+  position: fixed;
+  height: 50px;
+  width: 160px;
+  right: 50px;
+  border-radius: 8px 8px 0 0;
+  bottom: -50px;
+  z-index: 400000;
+  transition: 1s ease-in-out;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 52px;
+  background-color: #212121;
+  font-size: 1.2em;
+  color: #fafafa;
+  transform: rotateZ(-90deg);
+  transform-origin: right bottom;
+}
+
+
+.panstarrs-disabled > i{
+  font-family: 'Material Icons';
+  vertical-align: top;
+  font-size: 1.2em;
+  margin-right: 0.5em;
+  color: #fafafa;
+}
+
+.panstarrs-disabled.active.visible{
+  transform: rotateZ(0deg);
+  bottom: 0;
+}
+
+.panstarrs-disabled.connected{
+  border-top-left-radius: 0 !important;
+}
+
+.panstarrs-notification-disabled{
+  position: fixed;
+  height: 50px;
+  width: 210px;
+  bottom: 0;
+  right: -210px;
+  box-sizing: border-box;
+  padding-right: 50px;
+  text-align: center;
+  z-index: 400001;
+  text-align: center;
+  line-height: 52px;
+  background-color: #212121;
+  font-size: 1.2em;
+  color: #fafafa;
+  transition: 1s ease-in-out;
+  border-radius: 8px 8px 0 0;
+}
+
+.panstarrs-notification-disabled > i{
+  font-family: 'Material Icons';
+  vertical-align: text-top;
+  font-size: 1.2em;
+  margin-right: 0.5em;
+  color: #fafafa;
+}
+
+.panstarrs-notification-disabled.visible{
+  right: 0;
+}
+
+.panstarrs-notification-disabled.double{
+  bottom: 50px !important;
+}
+
+.test{
+  background-color: red !important;
+}
+
+.trolled{
+  transition: 1.5s ease-in-out;
+  transform: scale(0);
+}
